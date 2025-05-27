@@ -10,7 +10,12 @@
 */
 
 //Create IAM users with dynamic names
-resource "aws_iam_user" "dev_users" {
+/*resource "aws_iam_user" "dev_users" {
   count = 3
   name  = "dev-user-${count.index}"
+}*/
+
+resource "aws_cloudwatch_log_group" "app_logs" {
+  count = var.enable_logging ? 1 : 0
+  name  = "/aws/app/logs"
 }
