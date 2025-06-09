@@ -1,0 +1,25 @@
+PRIMITIVE DATA TYPE
+- String:
+    string => "hello"
+- Number:
+    float32
+    float64
+    int32
+    int64
+    Number => 42, 3.14 
+- Boolean: 
+    bool: true or false
+
+COLLECTION TYPE:
+- list => Ordered values of same type => ["a", "b", "c"]
+- set => Unordered values of same type cannot contain duplicates => ["web", "db"]
+- map => key value pairs with string keys and same type values => { "env" = "prod", "team" = "devops" }
+
+OBJECT TYPE:
+- Object => A group of named attributes with specific types. => object({ key = type, ... })
+
+TUPLE TYPE:
+- tuple => An ordered list with elements of different types. => tuple([string, number, bool])
+
+DYNAMIC TYPE:
+- dynamic: Any value type of data, determined at runtime. 

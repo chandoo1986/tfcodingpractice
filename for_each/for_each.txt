@@ -1,0 +1,27 @@
+# General for_each Syntax
+resource "<resource type>" "<resource name>" {
+  for_each = var.instances
+  // Other attributes
+
+  tags = {
+    Name = each.<value/key>
+  }
+}
+
+LISTS:
+
+# If type of variable used is list or set only each.value attribute is available.
+# We can convert a list to set if it has duplicate elements. 
+We can use function toset to convert a list to set and use it in for_each.
+
+MAP/SET:
+# If type of variable is map then each.key and each.value are available. 
+
+
+
+# Whenever using for_each first import it to your resource definition for example.
+# for_each = var.<variable name>
+# It has only two attributes each.key and each.value access them in your configuration. 
+
+# Exercise create vpc with for_each multiple subnets (https://spacelift.io/blog/terraform-for-each) & security groups
+
