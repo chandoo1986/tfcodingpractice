@@ -1,0 +1,11 @@
+Dynamic blocks: Dynamic blocks can be applied in resource block as nested block where scenarios needed multiple repeated configurations like AWS security groups with multiple ingress and egress rules, subnets and ec32 instances. 
+dynamic blocks help you dynamically construct repeated nested blocks.
+
+
+We can use them with resource , data , provider , and provisioner blocks.
+
+Components of dynamic blocks:
+- label: label specifies the kind of repeated nested block to generate. Each element in the iteration generates a block of this type.
+- for_each: Defines the complex value to iterate over, such as list or map.  
+- iterator: Iterator is optional if it is not set it defaults to label. It has two properties key and value. 
+- content: Defines actual configuration for each generated block.
