@@ -3,13 +3,17 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "mybucket" {
-  bucket = "test-06082025"
+  bucket = format("my-bucket-%02d", count.index + 1)
+  count  = 3
+
 
   tags = {
     Name        = "mybucket"
     Environment = "Prod"
   }
 }
+
+/*
 
 resource "aws_s3_bucket_versioning" "versioning_example" {
   bucket = aws_s3_bucket.mybucket.id
@@ -22,3 +26,4 @@ resource "aws_s3_bucket_acl" "addacl" {
   bucket                = aws_s3_bucket.mybucket.id
   acl = "private"
 }
+*/
